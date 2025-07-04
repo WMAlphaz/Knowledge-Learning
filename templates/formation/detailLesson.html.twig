@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %} {% block title %}{{ lesson.nameLesson }}{% endblock %} {% block body
+%}
+<link rel="stylesheet" href="{{ asset('assets/css/detailLesson.css') }}" type="text/css" />
+
+<div class="container d-flex flex-column align-items-center my-3">
+  <div class="row">
+    <div class="block">
+      <h1>{{ lesson.nameLesson }}</h1>
+
+      <div class="d-flex text-center">
+        <div class="separation"></div>
+      </div>
+
+      <div class="block-center">
+        <p>{{ lesson.content }}</p>
+        <video src="{{ asset('assets/uploads/videos/' ~ lesson.videoUrl) }}" controls></video>
+      </div>
+
+      {% if certification %}
+      <div class="mt-2 certification text-center">
+        
+          <h2 class="titre-certif">Félicitations, votre certification est obtenue !</h2>
+        
+        <div class="block-certif">
+          <img class="certification-img" src="{{ asset('assets/uploads/images/certification/'~ lesson.certificationImage) }}" alt="{{lesson.nameLesson}}">
+          <p>  Obtenue le : {{ certification.obtainedAt ? certification.obtainedAt|date('d-m-Y') : 'N/A' }}</p>
+        </div>
+      </div>
+      {% else %}
+       <form action="{{ path('validate_lesson', {id_lesson: lesson.idLesson})}}" method="post">
+          <div class="button">
+            <button type="submit " class="btn mt-3">Terminer la leçon</button>
+          </div>
+       </form>
+      {% endif %}
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Knowledge Learning{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" type="text/css" />
+
+<div class="hero-section">
+  <div class="overlay"></div>
+  <div class="hero-content container text-center">
+    <h1>Bienvenue sur Knowledge Learning</h1>
+    <p class="hero-subtitle">Pour apprendre, se perfectionner et valider ses connaissances dans ses passions !</p>
+  </div>
+</div>
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-lg-8 col-12 mb-4">
+      <h2>À propos de Knowledge Learning</h2>
+      <p>
+        Knowledge Learning est une plateforme d’e-learning conçue pour accompagner l’apprentissage dans une grande variété de domaines, allant de la musique à la cuisine, en passant par l’informatique et le jardinage. Destinée aussi bien aux passionnés qu’aux curieux, elle offre des parcours pédagogiques riches et structurés, accessibles à tous les niveaux.<br>
+        Chaque programme inclut des leçons interactives, des fiches pratiques et des vidéos, permettant à chacun d’avancer à son propre rythme. À l’issue d’un parcours complet, les utilisateurs peuvent valider leurs acquis en obtenant une certification officielle « Knowledge Learning ».
+      </p>
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <h3>Pourquoi choisir Knowledge Learning ?</h3>
+      <ul>
+        <li>Une large sélection de cursus adaptés à tous les centres d’intérêt.</li>
+        <li>Flexibilité totale : achetez un cursus complet ou des leçons à l’unité.</li>
+        <li>Apprenez où vous voulez, quand vous voulez, sur tous vos appareils.</li>
+        <li>Chaque leçon validée vous récompense par un badge valorisant vos compétences.</li>
+      </ul>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ path('app_register') }}" class="btn btn-primary btn-lg">Créez votre compte gratuitement</a>
+        <p class="mt-2">Et commencez à apprendre aujourd’hui !</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
